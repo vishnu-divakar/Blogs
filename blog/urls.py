@@ -19,5 +19,7 @@ from django.urls import path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url(r'^', include("url_shortener.urls"))
+    url(r'^', include("url_shortener.urls")),
+    url(r'^', include("blog_post.urls")),
+    url(r'^', include('comment_manager.urls'))
 ]

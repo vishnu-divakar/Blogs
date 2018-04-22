@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'url_shortener'
+    'url_shortener',
+    'blog_post',
+    'comment_manager'
 ]
 
 MIDDLEWARE = [
