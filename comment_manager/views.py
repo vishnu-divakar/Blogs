@@ -5,7 +5,7 @@ from comment_manager.models import CommentManager
 from comment_manager.serializer import CommentSerializer
 
 class Comment(APIView):
-
+    
     def get(self, request, format = None):
         commentManager = CommentManager.objects.all()
         if(commentManager):

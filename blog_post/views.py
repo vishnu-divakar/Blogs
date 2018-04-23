@@ -3,9 +3,9 @@ from rest_framework import status
 from rest_framework.response import Response
 from blog_post.models import BlogPostModel
 from blog_post.serializer import BlogPostSerializer
-
+from rest_framework.permissions import IsAuthenticated
 class BlogPost(APIView):
-
+    permission_classes = (IsAuthenticated,)
     def get(self, request, format = None):
         blogPostModel = BlogPostModel.objects.all()
         serializer = BlogPostSerializer(blogPostModel, many = True)

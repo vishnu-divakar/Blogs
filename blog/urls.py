@@ -16,10 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.conf.urls import url, include
 from django.urls import path
-
+from blog.token_startup import generateTokenOnStartUp
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^', include("url_shortener.urls")),
     url(r'^', include("blog_post.urls")),
-    url(r'^', include('comment_manager.urls'))
+    url(r'^', include('comment_manager.urls')),
+    url(r'^', include('usermanagement.urls'))
 ]
+
+generateTokenOnStartUp()

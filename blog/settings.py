@@ -40,7 +40,9 @@ INSTALLED_APPS = [
     'rest_framework',
     'url_shortener',
     'blog_post',
-    'comment_manager'
+    'comment_manager',
+    'usermanagement',
+    'rest_framework.authtoken'
 ]
 
 MIDDLEWARE = [
@@ -84,6 +86,11 @@ DATABASES = {
     }
 }
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES':(
+        'rest_framework.authentication.TokenAuthentication',
+    )
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
